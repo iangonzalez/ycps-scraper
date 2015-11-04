@@ -14,7 +14,7 @@ subjects <- gsub("\"", "", subjects, fixed=TRUE)
 subjects <- unique(subjects[1:130])
 subjects <- subjects[!grepl("/", subjects, fixed=TRUE)]
 
-# main loop:
+# main loop: 
 raw_info <- lapply(subjects, function(subj) {
   subj_page <- getURL(sprintf("http://catalog.yale.edu/ycps/subjects-of-instruction/%s/", subj))
   subj_page <- strsplit(subj_page, split="\n", fixed=TRUE)[[1]]
